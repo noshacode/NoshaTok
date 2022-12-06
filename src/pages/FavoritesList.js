@@ -17,7 +17,7 @@ function FavoritesList() {
 			<div className="videos">
 				{favVideos.map((favVideo) => (
 					<div key={favVideo.id}>
-						<Video srcProp={favVideo.url} width={300} video={favVideo} />
+						<Video video={favVideo} />
 					</div>
 				))}
 			</div>

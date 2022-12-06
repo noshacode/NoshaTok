@@ -26,18 +26,13 @@ function Home() {
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
-
+	console.log(videos);
 	return (
 		<div className="container-home">
 			<div className="videos">
 				{videos.map((video) => (
 					<div key={video.id}>
-						<Video
-							key={video.id}
-							video={video}
-							srcProp={video.url}
-							width={300}
-						/>
+						<Video video={video} />
 						<div className="videos">
 							Posted {window.moment(video.createdAt.seconds * 1000).fromNow()}
 						</div>
