@@ -1,9 +1,16 @@
 import React from "react";
+import ButtonLike from "./ButtonLike";
 
-export default function Video(prop) {
+export default function Video(props) {
 	return (
-		<div>
-			<video src={prop.srcProp} width="300" controls></video>
+		<div className="video-container">
+			<video
+				className="vidBorder"
+				src={props.srcProp}
+				width="300"
+				controls
+			></video>
+			<ButtonLike video={props.video} />
 		</div>
 	);
 }

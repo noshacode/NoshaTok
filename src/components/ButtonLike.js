@@ -5,10 +5,8 @@ import { useContext } from "react";
 
 function ButtonLike({ video }) {
 	const [favVideos, setFavVideos] = useContext(FavoritesContext);
-	// const [isFavLoading, setIsFavLoading] = useContext(FavoritesContext);
 
 	function addLike() {
-		console.log("should add", favVideos, video);
 		const newVideos = [...favVideos, video];
 		setFavVideos(newVideos);
 	}
@@ -17,8 +15,8 @@ function ButtonLike({ video }) {
 		setFavVideos(filterFavById);
 	}
 	return (
-		<>
-			{favVideos.includes(video) ? (
+		<div className="button-container">
+			{favVideos.some((item) => item.id === video.id) ? (
 				<button className="heartButton" onClick={removeLike}>
 					<img className="heart" src={heartSolid} alt="heartsolid" />
 				</button>
@@ -27,7 +25,7 @@ function ButtonLike({ video }) {
 					<img className="heart" src={heartRegular} alt="heartregular" />
 				</button>
 			)}
-		</>
+		</div>
 	);
 }
 export default ButtonLike;

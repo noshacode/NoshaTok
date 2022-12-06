@@ -15,7 +15,6 @@ function Upload() {
 		e.preventDefault();
 		if (file) {
 			setIsUploading(true);
-			console.log("Im submitting", file);
 			uploadFile(file, setProgress); //
 		}
 	}
@@ -39,7 +38,9 @@ function Upload() {
 							{Math.round(progress)}%
 						</>
 					) : (
-						<button type="submit">Upload</button>
+						<button className="upload" type="submit">
+							Upload
+						</button>
 					)}
 				</div>
 			</form>

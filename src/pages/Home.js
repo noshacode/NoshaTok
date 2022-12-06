@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Video from "../components/Video";
-import ButtonLike from "../components/ButtonLike";
 import { db } from "../firebase/config";
 
 function Home() {
@@ -8,7 +7,6 @@ function Home() {
 	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		console.log("hi, im entering");
 		const unsubscribe = db
 			.collection("videos")
 			.orderBy("createdAt", "desc")
@@ -21,40 +19,33 @@ function Home() {
 			});
 		setLoading(false);
 		return () => {
-			console.log("bye, im leaving");
 			unsubscribe();
 		};
 	}, []);
-	console.log("videos", videos);
 
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
 
-	console.log(videos);
 	return (
-		<div className="container">
+		<div className="container-home">
 			<div className="videos">
 				{videos.map((video) => (
 					<div key={video.id}>
 						<Video
 							key={video.id}
+							video={video}
 							srcProp={video.url}
 							width={300}
-							autoPlay
-							controls
 						/>
-						<div>
-							posted at :
-							{new Date(video.createdAt.seconds * 1000).toLocaleString()}
+						<div className="videos">
+							Posted {window.moment(video.createdAt.seconds * 1000).fromNow()}
 						</div>
-						<ButtonLike video={video} />
 					</div>
 				))}
 			</div>
 		</div>
 	);
 }
-console.log("videos");
 
 export default Home;

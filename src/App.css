@@ -2,8 +2,8 @@
 	text-align: center;
 }
 
-.header > a {
-	color: rgb(193, 77, 77);
+.container {
+	color: rgb(239, 239, 239);
 }
 
 .heart {
@@ -14,18 +14,59 @@
 	border: none;
 	background-color: transparent;
 }
-.under-line {
+
+a {
 	text-decoration: none;
-	text-align: start;
+	color: white;
+}
+.flex {
+	display: flex;
+	justify-content: center;
+}
+.end-link {
+	margin: 5px;
+	margin-left: 10px;
+}
+.container-home {
+	margin-top: 20px;
+}
+
+.videos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+}
+
+.vidBorder {
+	border-radius: 10px;
+	border: rgb(41, 40, 40);
 }
 
 .upload {
-	text-align: end;
+	margin: 10px;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: rgb(41, 40, 40);
+	color: #fff;
+	border: transparent;
 }
 
 .upload-box {
 	text-align: center;
-	padding-top: 50px;
+	padding-top: 100px;
+}
+
+.video-container {
+	position: relative;
+	width: fit-content;
+	margin: 15px;
+}
+
+.button-container {
+	position: absolute;
+	top: 5px;
+	right: 10px;
 }
 
 .input-upload {
@@ -35,16 +76,24 @@
 	padding: 5px;
 	background: #fff;
 	border-radius: 10px;
-	border: 1px solid #555;
+	border: 1px solid rgb(41, 40, 40);
 }
 
 input[type="file"]::file-selector-button {
 	margin-right: 20px;
 	border: none;
-	background: #555;
+	background: rgb(41, 40, 40);
 	padding: 10px 20px;
 	border-radius: 10px;
 	color: #fff;
 	cursor: pointer;
 	/* transition: background 0.7s ease-in-out; */
+}
+
+.No-favorites {
+	color: black;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 100px;
 }

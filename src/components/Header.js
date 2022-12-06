@@ -1,22 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+
 function Header() {
 	return (
-		<div className="header">
-			<Link to="/" className="under-line">
-				<h1>NoshaTok</h1>
-			</Link>
-
-			<Link to="/upload" className="upload">
-				+ Upload
-			</Link>
-
-			<div>
-				<Link to="/like" className="upload">
-					Favorites
-				</Link>
-			</div>
-		</div>
+		<>
+			<Navbar bg="dark" variant="dark" className="header">
+				<Container className="flex">
+					<div>
+						<Link to="/">
+							<h1>NoshaTok</h1>
+						</Link>
+					</div>
+					<div className="flex">
+						<div className="end-link">
+							<Link to="/upload">
+								<h5>+ Upload</h5>
+							</Link>
+						</div>
+						<div className="end-link">
+							<Link to="/like">
+								<h5>Favorites</h5>
+							</Link>
+						</div>
+					</div>
+				</Container>
+			</Navbar>
+		</>
 	);
 }
 

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import "./App.css";
 import FavoritesList from "./pages/FavoritesList";
 import FavoriteProvider from "./FavoritesContext";
+
 function App() {
 	return (
 		<>
