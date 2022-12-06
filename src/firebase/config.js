@@ -1,3 +1,5 @@
+//Reference https://www.youtube.com/watch?v=PP4Tr0l08NE&ab_channel=TraversyMedia
+
 // Import the functions you need from the SDKs you need
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
